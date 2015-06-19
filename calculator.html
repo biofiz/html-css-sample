@@ -23,9 +23,14 @@
     width:250px;
   }
   td {
-  background-color:#999;
+  background-color:#53A65A;
   }
+
+  .red
+  {
+    background-color:#FB2436;
   }
+  
 </style>
 </head>
 <body>
@@ -40,9 +45,9 @@
      <tr>
          <td colspan="3"></td>
          <td><input name="btnClear" type="Button"
-            value="C" onclick="Clear()" /></td>
+            value="C" onclick="Clear()" class = "red" /></td>
          <td><input name="btnClearEntry" type="Button"
-            value="CE" onclick="ClearEntry()" /></td>
+            value="CE" onclick="ClearEntry()" class = "red" /></td>
      </tr>
      <tr>
          <td><input name="btnSeven" type="Button"
@@ -77,7 +82,8 @@
             value="3" onclick="NumPressed(3)"></td>
          <td><input name="btnPercent" type="Button"
             value="%" onclick="Percent()" /></td>
-         <td align=middle>&nbsp;</td>
+         <td><input name="btnRoot" type="Button"
+            value="&radic;" onclick="Root()" /></td>
      </tr>
      <tr>
          <td><input name="btnZero" type="Button"
@@ -193,6 +199,13 @@ function Percent ()
     Fcalc.ReadOut.value = 
       (parseFloat(Fcalc.ReadOut.value) / 100) * 
       parseFloat(Currents);
+}
+
+// вычисляем квадратный корень
+function Root () 
+{
+    Fcalc.ReadOut.value = 
+      Math.sqrt(parseFloat(Fcalc.ReadOut.value));
 }
 </script>
 </body>
